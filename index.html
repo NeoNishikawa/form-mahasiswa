@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendaftaran Mahasiswa Baru</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">UniRegist Pro</h1>
+            <p class="tagline">Sistem Pendaftaran Mahasiswa Baru - Universitas 17 AGUSTUS 1945 SBY</p>
+        </header>
+        
+        <main class="main-content">
+            <!-- Form Pendaftaran -->
+            <section id="registration-form" class="form-card card">
+                <h2 class="form-title">Formulir Pendaftaran Mahasiswa Baru</h2>
+                
+                <form id="studentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName" class="required">Nama Lengkap</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Masukkan nama lengkap">
+                            <span class="error-message" id="fullNameError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nim" class="required">Nomor Induk Mahasiswa (NIM)</label>
+                            <input type="text" id="nim" name="nim" placeholder="Contoh: 202312345">
+                            <span class="error-message" id="nimError"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthDate" class="required">Tanggal Lahir</label>
+                            <input type="date" id="birthDate" name="birthDate">
+                            <span class="error-message" id="birthDateError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="birthPlace" class="required">Tempat Lahir</label>
+                            <input type="text" id="birthPlace" name="birthPlace" placeholder="Kota tempat lahir">
+                            <span class="error-message" id="birthPlaceError"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email" class="required">Email</label>
+                            <input type="email" id="email" name="email" placeholder="nama@example.com">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="required">Nomor Telepon</label>
+                            <input type="tel" id="phone" name="phone" placeholder="08xxxxxxxxxx">
+                            <span class="error-message" id="phoneError"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="studyProgram" class="required">Program Studi</label>
+                            <select id="studyProgram" name="studyProgram">
+                                <option value="">-- Pilih Program Studi --</option>
+                                <option value="Teknik Informatika">Teknik Informatika</option>
+                                <option value="Sistem Informasi">Sistem Informasi</option>
+                                <option value="Teknik Elektro">Teknik Elektro</option>
+                                <option value="Manajemen">Manajemen</option>
+                                <option value="Akuntansi">Akuntansi</option>
+                                <option value="Hukum">Hukum</option>
+                                <option value="Psikologi">Psikologi</option>
+                                <option value="Kedokteran">Kedokteran</option>
+                            </select>
+                            <span class="error-message" id="studyProgramError"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="required">Jenis Kelamin</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="Laki-laki">
+                                    Laki-laki
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="gender" value="Perempuan">
+                                    Perempuan
+                                </label>
+                            </div>
+                            <span class="error-message" id="genderError"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="required">Pilih Mata Kuliah (Minimal 3)</label>
+                        <div class="checkbox-group" id="coursesContainer">
+                            <!-- Mata kuliah akan di-generate oleh JavaScript -->
+                        </div>
+                        <span class="error-message" id="coursesError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="semester" class="required">Semester</label>
+                        <select id="semester" name="semester">
+                            <option value="">-- Pilih Semester --</option>
+                            <option value="1">Semester 1</option>
+                            <option value="2">Semester 2</option>
+                            <option value="3">Semester 3</option>
+                            <option value="4">Semester 4</option>
+                            <option value="5">Semester 5</option>
+                            <option value="6">Semester 6</option>
+                            <option value="7">Semester 7</option>
+                            <option value="8">Semester 8</option>
+                        </select>
+                        <span class="error-message" id="semesterError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address" class="required">Alamat Lengkap</label>
+                        <textarea id="address" name="address" rows="4" placeholder="Masukkan alamat lengkap"></textarea>
+                        <span class="error-message" id="addressError"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="motivation">Motivasi Kuliah (Opsional)</label>
+                        <textarea id="motivation" name="motivation" rows="3" placeholder="Jelaskan motivasi Anda untuk melanjutkan kuliah"></textarea>
+                    </div>
+                    
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-primary">Daftar Sekarang</button>
+                        <button type="button" id="resetBtn" class="btn btn-secondary">Reset Form</button>
+                        <button type="button" id="showHistoryBtn" class="btn btn-outline">Lihat Riwayat</button>
+                    </div>
+                </form>
+            </section>
+            
+            <!-- Kartu Hasil Pendaftaran -->
+            <section id="result-card" class="result-card card">
+                <h2 class="result-title">Pendaftaran Berhasil!</h2>
+                
+                <div class="success-message">
+                    <div class="success-icon">✅</div>
+                    <h3>Data Anda telah berhasil disimpan</h3>
+                    <p>ID Pendaftaran: <strong id="registration-id"></strong></p>
+                </div>
+                
+                <div class="result-data">
+                    <div class="data-row">
+                        <div class="data-label">Nama Lengkap</div>
+                        <div class="data-value" id="result-name">-</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label">NIM</div>
+                        <div class="data-value" id="result-nim">-</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label">TTL</div>
+                        <div class="data-value" id="result-birth">-</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label">Email</div>
+                        <div class="data-value" id="result-email">-</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label">Nomor Telepon</div>
+                        <div class="data-value" id="result-phone">-</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label">Program Studi</div>
+                        <div class="data-value" id="result-program">-</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label">Semester</div>
+                        <div class="data-value" id="result-semester">-</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label">Jenis Kelamin</div>
+                        <div class="data-value" id="result-gender">-</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label">Mata Kuliah Dipilih</div>
+                        <div class="data-value" id="result-courses">-</div>
+                    </div>
+                    <div class="data-row">
+                        <div class="data-label">Alamat Lengkap</div>
+                        <div class="data-value" id="result-address">-</div>
+                    </div>
+                    <div class="data-row" id="motivation-row">
+                        <div class="data-label">Motivasi Kuliah</div>
+                        <div class="data-value" id="result-motivation">-</div>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button type="button" id="newRegistrationBtn" class="btn btn-primary">Daftar Baru</button>
+                    <button type="button" id="viewHistoryBtn" class="btn btn-outline">Lihat Riwayat</button>
+                </div>
+            </section>
+            
+            <!-- Panel Riwayat Pendaftaran -->
+            <section id="history-panel" class="history-panel card">
+                <div class="history-header">
+                    <h2 class="history-title">Riwayat Pendaftaran</h2>
+                    <button type="button" id="closeHistoryBtn" class="btn-close">×</button>
+                </div>
+                
+                <div class="history-controls">
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="Cari berdasarkan nama atau NIM...">
+                        <button type="button" id="searchBtn" class="btn-icon">🔍</button>
+                    </div>
+                    <button type="button" id="clearHistoryBtn" class="btn btn-danger">Hapus Semua Riwayat</button>
+                </div>
+                
+                <div class="history-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Total Pendaftar</span>
+                        <span class="stat-value" id="totalRegistrations">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Program Studi Terpopuler</span>
+                        <span class="stat-value" id="popularProgram">-</span>
+                    </div>
+                </div>
+                
+                <div class="history-list" id="historyList">
+                    <!-- Daftar riwayat akan diisi oleh JavaScript -->
+                    <div class="empty-state">
+                        <p>Belum ada data pendaftaran.</p>
+                        <p>Silakan isi form pendaftaran terlebih dahulu.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 Universitas Terbuka. Hak Cipta Dilindungi.</p>
+            <p>Sistem Pendaftaran Mahasiswa Baru v2.0 | <span id="total-saved">0</span> data tersimpan</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
